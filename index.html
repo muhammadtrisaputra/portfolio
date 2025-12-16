@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Portfolio</title>
+    <style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+    font-family:"Poppins",sans-serif;
+    background:linear-gradient(135deg,#f5f7ff,#ffffff,#eef2ff);
+    color:#1f2937;
+    overflow-x:hidden
+}
+header{
+    padding:20px 50px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:sticky;
+    top:0;
+    background:rgba(255,255,255,.85);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid #e5e7eb
+}
+header h1{font-size:28px;letter-spacing:2px;color:#1f3cff}
+nav a{margin-left:20px;color:#374151;text-decoration:none;font-weight:600;transition:.3s}
+nav a:hover{color:#1f3cff}
+.hero{height:90vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:20px}
+.profile-photo{width:160px;height:160px;border-radius:50%;object-fit:cover;border:5px solid #1f3cff;margin-bottom:25px;box-shadow:0 15px 35px rgba(31,60,255,.3)}
+.name{color:#1f3cff}
+.hero h2{font-size:52px;margin-bottom:15px;color:#111827}
+.hero h3{font-size:18px;font-weight:600;color:#374151;margin-bottom:10px}
+.hero p{font-size:20px;max-width:720px;margin-bottom:20px;color:#374151}
+.linkedin-icon{margin-bottom:25px}
+.linkedin-icon a{display:inline-flex;align-items:center;justify-content:center;width:48px;height:48px;border-radius:50%;background:#0a66c2;box-shadow:0 10px 25px rgba(10,102,194,.35);transition:.3s}
+.linkedin-icon a:hover{transform:translateY(-4px);box-shadow:0 15px 35px rgba(10,102,194,.45)}
+.linkedin-icon svg{width:26px;height:26px;fill:#ffffff}
+.btn{padding:14px 32px;background:linear-gradient(135deg,#1f3cff,#4f7cff);color:#fff;border-radius:12px;text-decoration:none;font-size:18px;font-weight:700;box-shadow:0 10px 30px rgba(31,60,255,.25);transition:.3s}
+.btn:hover{transform:translateY(-4px);box-shadow:0 15px 40px rgba(31,60,255,.35)}
+.cv-btn{margin-top:18px;background:linear-gradient(135deg,#10b981,#34d399);box-shadow:0 10px 30px rgba(16,185,129,.25)}
+.cv-btn:hover{box-shadow:0 15px 40px rgba(16,185,129,.35)}
+section{padding:90px 50px}
+.section-title{font-size:40px;text-align:center;margin-bottom:45px;color:#1f3cff}
+.about,.projects,.contact{max-width:1100px;margin:auto;text-align:center}
+.projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:28px}
+.skills{max-width:900px;margin:0 auto}
+.skill-group{margin-bottom:35px}
+.skill-group h3{font-size:22px;color:#111827;margin-bottom:12px}
+.skill-list{display:flex;flex-wrap:wrap;gap:12px}
+.skill-item{padding:8px 16px;border-radius:999px;background:#f1f5ff;color:#1f3cff;font-weight:600;font-size:14px;border:1px solid #dbe3ff}
+.timeline{max-width:800px;margin:0 auto;text-align:left}
+.timeline-item{padding:24px;border-radius:16px;margin-bottom:28px;background:#ffffff;border:1px solid #e5e7eb;box-shadow:0 10px 30px rgba(0,0,0,.06)}
+.timeline-item:last-child{border-bottom:none}
+.cert-box{border-left:6px solid #1f3cff;background:linear-gradient(135deg,#f5f7ff,#ffffff)}
+.training-box{border-left:6px solid #10b981;background:linear-gradient(135deg,#ecfdf5,#ffffff)}
+.timeline-item:last-child{border-bottom:none}
+.timeline-item h3{font-size:20px;color:#111827;margin-bottom:6px}
+.timeline-item span{font-size:14px;color:#6b7280}
+.timeline-item p{margin-top:8px;color:#374151;line-height:1.6}
+.project-card{background:#ffffff;padding:28px;border-radius:20px;border:1px solid #e5e7eb;box-shadow:0 10px 30px rgba(0,0,0,.06);transition:.35s}
+.project-card:hover{transform:translateY(-10px);box-shadow:0 20px 45px rgba(0,0,0,.12)}
+.contact form{display:flex;flex-direction:column;gap:16px;max-width:520px;margin:auto}
+.contact input,.contact textarea{padding:14px 16px;border-radius:12px;border:1px solid #d1d5db;outline:none;font-size:16px}
+.contact input:focus,.contact textarea:focus{border-color:#1f3cff}
+.contact button{padding:14px;background:linear-gradient(135deg,#1f3cff,#4f7cff);border:none;border-radius:12px;font-size:18px;font-weight:700;cursor:pointer;color:#fff;transition:.3s}
+.contact button:hover{transform:translateY(-3px)}
+footer{text-align:center;padding:22px;margin-top:60px;background:rgba(255,255,255,.9);border-top:1px solid #e5e7eb;color:#6b7280}
+.job-title{font-size:16px;font-weight:600;color:#1f3cff;margin-top:4px}
+</style>
+</head>
+<body>
+<header>
+    <h1>MyPortfolio</h1>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#education">Education</a>
+        <a href="#experience">Experience</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#certifications">Certifications</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+<section class="hero" id="home">
+    <img src="profile.jpg" alt="Profile Photo" class="profile-photo">
+    <h2>Hello, I'm <span class="name">Muhammad Trisaputra</span></h2>
+    <h3>Electrical Engineering  | University of Bengkulu</h3>
+    <div class="linkedin-icon">
+    <a href="https://www.linkedin.com/in/muhammadtrisaputra/" target="_blank" aria-label="LinkedIn">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="26" height="26">
+            <path fill="#ffffff" d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.266 2.37 4.266 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124zM6.814 20.452H3.861V9h2.953v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.727v20.545C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.273V1.727C24 .774 23.2 0 22.222 0z"/>
+        </svg>
+    </a>
+</div>
+    <a href="#projects" class="btn">View Projects</a>
+    <a href="CV.pdf" class="btn cv-btn" download>Download CV</a>
+</section>
+<section class="about" id="about">
+    <h2 class="section-title">About Me</h2>
+    <p>A fresh graduate Bachelor of Engineering in Electrical Engineering University of Bengkulu with a GPA of 3.50/4.00, with strong interests in electronics, RF,
+      control systems, antenna and microwave design, computer networks, electrical installation, IoT, web development, and weather radar technology. Passionate about continuous learning and integrating hardware and software into impactful solutions.</p>
+</section>
+<section id="education">
+    <h2 class="section-title">Education</h2>
+    <div class="timeline">
+        <div class="timeline-item">
+            <h3>University of Bengkulu – Bachelor of Engineering in Electrical Engineering</h3>
+            <span>2021 – 2025 | GPA: 3.50 / 4.00</span>
+            <p>Focused on electrical systems, electronics, instrumentation, and telecommunication.</p>
+        </div>
+        <div class="timeline-item">
+            <h3>Vocational High School 1 Bengkulu City – Computer and Informatics Engineering</h3>
+            <span>2018 – 2021 | Average Score: 85 / 100</span>
+            <p>Focused on computer networking, hardware installation, and basic IT systems.</p>
+        </div>
+    </div>
+</section>
+
+<section id="experience">
+    <h2 class="section-title">Work Experience</h2>
+    <div class="timeline">
+        <div class="timeline-item">
+            <h3>BRIN Bandung (KST Samaun Samadikun)</h3>
+            <p class="job-title">Internship – Research Assistant</p>
+            <span>Aug 2023 – Dec 2023</span>
+            <ul style="margin-top:12px; padding-left:20px; color:#374151; line-height:1.7">
+                <li>Participated in the development and testing of the SANTANU Weather Radar for tropical rainfall monitoring.</li>
+                <li>Operated radar control computers, including system monitoring and data visualization.</li>
+                <li>Assisted in antenna, radar hardware, and signal transmission activities.</li>
+                <li>Supported hardware–software integration in weather sensing systems.</li>
+                <li>Developed analytical thinking and troubleshooting skills in a national research environment.</li>
+            </ul>
+        </div>
+        <div class="timeline-item">
+            <h3>Ditjen Perbendaharaan Provinsi Bengkulu</h3>
+            <p class="job-title">Internship - Technician / IT Support</p>
+            <span>Feb 2020 - Mar 2020</span>
+            <ul style="margin-top:12px; padding-left:20px; color:#374151; line-height:1.7">
+                <li>Assembled, installed, and maintained computers and office network systems.</li>
+                <li>Installed and configured operating systems and performed LAN/WAN network setup.</li>
+                <li>Conducted fiber optic installation and ensured optimal network performance.</li>
+                <li>Performed hardware and software maintenance to support daily operations.</li>
+                <li>Strengthened technical expertise in Computer and Network Engineering.</li>
+                <li>Developed strong work discipline, sense of responsibility, and problem-solving skills in a professional environment.</li>
+            </ul>
+        </div>
+    </div>
+</section>
+<section id="skills">
+    <h2 class="section-title">Skills</h2>
+    <div class="skills">
+        <div class="skill-group">
+            <h3>Software & Web Development</h3>
+            <div class="skill-list">
+                <span class="skill-item">Web Development</span>
+                <span class="skill-item">HTML</span>
+                <span class="skill-item">CSS</span>
+                <span class="skill-item">JavaScript</span>
+                <span class="skill-item">Basic PHP</span>
+            </div>
+        </div>
+        <div class="skill-group">
+            <h3>Electrical, Control & Hardware Systems</h3>
+            <div class="skill-list">
+                <span class="skill-item">Control Systems</span>
+                <span class="skill-item">Electrical Installation</span>
+                <span class="skill-item">Automotive Electrical Systems</span>
+                <span class="skill-item">Basic Electronics</span>
+                <span class="skill-item">Instrumentation</span>
+                <span class="skill-item">Solar Panel Systems</span>
+                <span class="skill-item">Battery Management System (BMS)</span>
+                <span class="skill-item">Electric Motor Systems</span>
+                <span class="skill-item">Antenna Design</span>
+                <span class="skill-item">Antenna Optimization</span>
+                <span class="skill-item">Radio Frequency (RF)</span>
+                <span class="skill-item">Weather Radar Systems</span>
+                <span class="skill-item">CST Studio Suite</span>
+                <span class="skill-item">Troubleshooting</span>
+            </div>
+        </div>
+        <div class="skill-group">
+            <h3>Networking & IoT</h3>
+            <div class="skill-list">
+                <span class="skill-item">Internet of Things (IoT)</span>
+                <span class="skill-item">Network Administration</span>
+                <span class="skill-item">Networking</span>
+                <span class="skill-item">Mikrotik</span>
+            </div>
+        </div>
+        <div class="skill-group">
+            <h3>Soft Skills</h3>
+            <div class="skill-list">
+                <span class="skill-item">Problem Solving</span>
+                <span class="skill-item">Teamwork</span>
+                <span class="skill-item">Adaptability</span>
+                <span class="skill-item">Continuous Learning</span>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="projects" id="projects">
+    <h2 class="section-title">Projects</h2>
+    <div class="projects-grid">
+        <div class="project-card">
+            <img src="images/capstone-lighting.jpg" alt="Vehicle Lighting Installation" style="width:100%; border-radius:14px; margin-bottom:16px;">
+            <h3>Capstone Project – Vehicle Lighting Installation</h3>
+            <p>Designed and implemented an automotive lighting installation system, including wiring, protection, and functional testing to ensure safety, efficiency, and compliance with vehicle electrical standards.</p>
+        </div>
+        <div class="project-card">
+            <img src="images/parabolic-antenna.jpg" alt="Parabolic Antenna Design" style="width:100%; border-radius:14px; margin-bottom:16px;">
+            <h3>Undergraduate Thesis – Parabolic Antenna Design & Optimization</h3>
+            <p>Final undergraduate thesis project involving the design and optimization of a parabolic antenna using CST Studio Suite. The work focused on improving gain, beamwidth, and sidelobe level performance for RF and weather radar applications through simulation, parameter optimization, and performance analysis.</p>
+        </div>
+        <div class="project-card">
+            <img src="images/power-supply.jpg" alt="Power Supply Project" style="width:100%; border-radius:14px; margin-bottom:16px;">
+            <h3>DC Power Supply Development</h3>
+            <p>Built a regulated DC power supply with voltage control, protection circuits, and performance testing for electronics and laboratory use.</p>
+        </div>
+        <div class="project-card">
+            <img src="active-speaker.jpg" alt="Active Speaker" style="width:100%; border-radius:14px; margin-bottom:16px;">
+            <h3>Active Speaker System</h3>
+            <p>Designed and assembled an active speaker system including amplifier, crossover, power supply, and enclosure for clear and efficient audio output.</p>
+        </div>
+        <div class="project-card">
+            <img src="images/spot-welder.jpg" alt="Spot Welder and Tools" style="width:100%; border-radius:14px; margin-bottom:16px;">
+            <h3>Electronics Tools Development</h3>
+            <p>Developed practical electronics tools including a hot air solder station, spot welder, and mini grinder to support hardware prototyping, assembly, and maintenance activities.</p>
+        </div>
+        <div class="project-card">
+            <img src="images/power-bank.jpg" alt="Power Bank and Battery System" style="width:100%; border-radius:14px; margin-bottom:16px;">
+            <h3>Battery & Power Management Systems</h3>
+            <p>Created power bank systems, 8-slot 18650 battery chargers, and lead-acid battery charge–discharge testers focusing on safety, efficiency, and battery health monitoring.</p>
+        </div>
+    </div>
+</section>
+<section id="certifications">
+    <h2 class="section-title">Certifications & Training</h2>
+    <div class="timeline">
+        <div class="timeline-item cert-box">
+            <h3>Certification</h3>    
+            <p>
+                <strong>ESDM – Low Voltage Electrical Installation and Utilization</strong><br>
+                Valid: 2025 – 2028<br>
+                National certification covering low voltage electrical installation, operation, safety procedures, and utilization in compliance with Indonesian electrical standards.<br><br>
+
+                <strong>BNSP – Network and Infrastructure</strong><br>
+                Valid: 2024 – 2027<br>
+                Professional competency certification focused on network infrastructure installation, configuration, maintenance, and troubleshooting of IT systems.<br><br>
+
+                <strong>BNSP – KKNI Level II Competence of Computer and Network Engineering</strong><br>
+                Valid: 2021 – 2024<br>
+                National competency certification demonstrating fundamental skills in computer systems, networking, hardware installation, and IT support based on KKNI Level II standards.
+            </p>
+        </div>
+        <div class="timeline-item training-box">
+            <h3>Training & Courses</h3>
+            <p>
+           
+                <strong>Komdigi – Intermediate Junior Web Developer</strong> (2–16 September 2025)<br>
+                Intensive training focused on modern web development fundamentals, frontend–backend integration, responsive design, and practical project implementation.<br><br>
+
+                <strong>Komdigi – AI Advanced: AI Track</strong> (17 April 2025 – 6 May 2025)<br>
+                Advanced AI training covering machine learning concepts, applied artificial intelligence, data-driven problem solving, and hands-on AI project development.<br><br>
+
+                <strong>Kominfo – Junior Network Administrator</strong> (2–12 September 2024)<br>
+                Professional networking training focusing on network installation, configuration, basic routing & switching, troubleshooting, and network administration best practices.
+            </p>
+        </div>
+    </div>
+</section>
+<section class="contact" id="contact">
+    <h2 class="section-title">Contact Me</h2>
+    <form>
+        <input type="text" placeholder="Your Name" required />
+        <input type="email" placeholder="Your Email" required />
+        <textarea rows="5" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+    </form>
+</section>
+<footer>
+    <p>© 2025 Muhammad Trisaputra | All Rights Reserved</p>
+</footer>
+</body>
+</html>
